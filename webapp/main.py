@@ -70,7 +70,7 @@ def assistant(query, context):
     ]
 
     response = openai.ChatCompletion.create(
-        engine="demo-alfredo",
+        engine="demo-openai-dcjgs",
         messages=messages,
     )
     return response['choices'][0]['message']['content']
