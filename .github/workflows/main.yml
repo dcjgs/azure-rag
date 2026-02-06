@@ -14,6 +14,12 @@ on:
   # Allow mannually trigger
   workflow_dispatch:
 
+with:
+  push: true
+  no-cache: true
+  tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
+  file: ./Dockerfile
+
 jobs:
   build:
     runs-on: ubuntu-latest

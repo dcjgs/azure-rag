@@ -1,3 +1,5 @@
+# force rebuild 2026-02-06
+
 FROM python:3.10
 
 COPY ./requirements.txt /webapp/requirements.txt
@@ -8,6 +10,5 @@ RUN pip install -r requirements.txt
 
 COPY webapp/* /webapp
 
-ENTRYPOINT [ "uvicorn" ]
-
-CMD [ "--host", "0.0.0.0", "main:app","80" ]
+ENTRYPOINT ["uvicorn"]
+CMD ["main:app", "--host", "0.0.0.0", "--port", "80"]
